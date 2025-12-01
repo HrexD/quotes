@@ -1,0 +1,91 @@
+
+###> symfony/framework-bundle ###
+/.env.local
+/.env.local.php
+/.env.*.local
+/config/secrets/prod/prod.decrypt.private.php
+/public/bundles/
+/var/
+/vendor/
+/.env.*
+###< symfony/framework-bundle ###
+
+###> phpunit/phpunit ###
+/phpunit.xml
+/.phpunit.cache/
+###< phpunit/phpunit ###
+
+###> symfony/asset-mapper ###
+/public/assets/
+/assets/vendor/
+###< symfony/asset-mapper ###
+
+###> IDE et éditeurs ###
+/.idea/
+/.vscode/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+###> OS spécifiques ###
+# Windows
+*.exe
+*.msi
+*.bat
+ehthumbs.db
+Desktop.ini
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon?
+._*
+
+# Linux
+*~
+.directory
+
+###> Logs et fichiers temporaires ###
+*.log
+*.tmp
+*.temp
+.cache/
+.tmp/
+
+###> Node.js (si utilisé) ###
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+###> Fichiers de sauvegarde ###
+*.bak
+*.backup
+*.old
+
+###> Fichiers de configuration locale ###
+/docker-compose.override.yml
+/.php-version
+/.tool-versions
+
+###> Tests et couverture ###
+/coverage/
+/.phpunit.result.cache
+/build/
+
+###> Fichiers sensibles ###
+/.env.prod
+/.env.production
+/config/jwt/
+*.pem
+*.key
+*.crt
+
+###> Uploads et médias ###
+/public/uploads/
+/public/media/
+/public/images/uploads/

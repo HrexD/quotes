@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>{% block title %}Citations Inspirantes{% endblock %}</title>
+        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>💭</text></svg>">
+        {% block stylesheets %}
+            <link rel="stylesheet" href="{{ asset('styles/app.css') }}">
+        {% endblock %}
+
+        {% block javascripts %}
+            {% block importmap %}{{ importmap('app') }}{% endblock %}
+        {% endblock %}
+    </head>
+    <body>
+        <!-- Navbar -->
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="nav-brand">
+                    <a href="{{ path('app_home') }}">
+                        <span class="brand-icon">💭</span>
+                        <span class="brand-text">Citations Inspirantes</span>
+                    </a>
+                </div>
+
+                <div class="nav-menu" id="nav-menu">
+                    <a href="{{ path('app_home') }}" class="nav-link {% if app.request.attributes.get('_route') == 'app_home' %}active{% endif %}">
+                        <span class="nav-icon">🏠</span> Accueil
+                    </a>
+                    <a href="{{ path('app_quotes') }}" class="nav-link {% if app.request.attributes.get('_route') == 'app_quotes' %}active{% endif %}">
+                        <span class="nav-icon">📋</span> Citations
+                    </a>
+                    <a href="{{ path('app_add_quote') }}" class="nav-link {% if app.request.attributes.get('_route') == 'app_add_quote' %}active{% endif %}">
+                        <span class="nav-icon">➕</span> Ajouter
+                    </a>
+                    <a href="{{ path('app_about') }}" class="nav-link {% if app.request.attributes.get('_route') == 'app_about' %}active{% endif %}">
+                        <span class="nav-icon">ℹ️</span> À propos
+                    </a>
+                </div>
+
+                <div class="nav-toggle" id="nav-toggle">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Contenu principal -->
+        <div class="main-container">
+            {% block body %}{% endblock %}
+        </div>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>&copy; {{ 'now'|date('Y') }} Citations Inspirantes - Fait avec ❤️ et Symfony</p>
+        </footer>
+    </body>
+</html>

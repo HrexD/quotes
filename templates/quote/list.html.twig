@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Toutes les citations - Citations Inspirantes{% endblock %}
+
+{% block body %}
+<div class="main-container">
+    <section class="quotes-section">
+        <div class="section-container">
+            <div style="text-align: center; margin-bottom: 3rem;">
+                <h1 style="font-size: 3rem; color: white; margin-bottom: 1rem; text-shadow: 2px 2px 4px rgba(0,0,0,0.3);">Toutes nos citations</h1>
+                <p style="color: rgba(255,255,255,0.9); font-size: 1.2rem;">Découvrez notre collection complète d'inspirations quotidiennes</p>
+            </div>
+
+            <div style="background: rgba(255,255,255,0.95); padding: 3rem; border-radius: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.1);">
+                <ul class="quotes-list">
+                    {% for q in quotes %}
+                        <li>{{ q }}</li>
+                    {% else %}
+                        <li style="text-align: center; background: #f8f9fa; color: #6c757d; border-left: none; padding: 3rem;">
+                            💭 Aucune citation disponible pour le moment.
+                            <br><br>
+                            <a href="{{ path('app_add_quote') }}" class="btn btn-primary">➕ Être le premier à ajouter une citation</a>
+                        </li>
+                    {% endfor %}
+                </ul>
+
+                <div style="text-align: center; margin-top: 3rem; padding-top: 2rem; border-top: 2px solid #e9ecef;">
+                    <a href="{{ path('app_home') }}" class="btn btn-outline">🏠 Retour à l'accueil</a>
+                    <a href="{{ path('app_add_quote') }}" class="btn btn-primary">➕ Ajouter une citation</a>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+{% endblock %}
