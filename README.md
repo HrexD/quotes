@@ -43,8 +43,8 @@ L'application propose plusieurs sections :
 
 1. **Cloner le repository**
    ```bash
-   git clone https://github.com/HrexD/CreationInspirantes.git
-   cd CreationInspirantes
+   git clone https://github.com/HrexD/quotes.git
+   cd quotes
    ```
 
 2. **Installer les dépendances**
