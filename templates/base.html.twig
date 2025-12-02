@@ -6,7 +6,7 @@
         <title>{% block title %}Citations Inspirantes{% endblock %}</title>
         <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>💭</text></svg>">
         {% block stylesheets %}
-            <link rel="stylesheet" href="{{ asset('styles/app.css') }}">
+            {# Le CSS est automatiquement chargé via app.js et AssetMapper #}
         {% endblock %}
 
         {% block javascripts %}
@@ -56,5 +56,39 @@
         <footer class="footer">
             <p>&copy; {{ 'now'|date('Y') }} Citations Inspirantes - Fait avec ❤️ et Symfony</p>
         </footer>
+
+        <script>
+            // Navigation mobile toggle
+            document.addEventListener('DOMContentLoaded', function() {
+                const navToggle = document.getElementById('nav-toggle');
+                const navMenu = document.getElementById('nav-menu');
+
+                if (navToggle) {
+                    navToggle.addEventListener('click', function() {
+                        navToggle.classList.toggle('active');
+                        navMenu.classList.toggle('active');
+                    });
+                }
+
+                // Animation au défilement pour les éléments fade-in
+                const observerOptions = {
+                    threshold: 0.1,
+                    rootMargin: '0px 0px -50px 0px'
+                };
+
+                const observer = new IntersectionObserver(function(entries) {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('fade-in');
+                        }
+                    });
+                }, observerOptions);
+
+                // Observer tous les éléments avec des classes d'animation
+                document.querySelectorAll('.feature-card, .stat-card, .quote-display').forEach(el => {
+                    observer.observe(el);
+                });
+            });
+        </script>
     </body>
 </html>

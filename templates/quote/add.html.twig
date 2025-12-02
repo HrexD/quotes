@@ -3,71 +3,49 @@
 {% block title %}Ajouter une citation - Citations Inspirantes{% endblock %}
 
 {% block body %}
-<div class="main-container">
-    <section class="add-quote-section" style="padding: 4rem 0;">
-        <div class="section-container">
-            <div style="text-align: center; margin-bottom: 3rem;">
-                <h1 style="font-size: 3rem; color: white; margin-bottom: 1rem; text-shadow: 2px 2px 4px rgba(0,0,0,0.3);">Ajouter une citation</h1>
-                <p style="color: rgba(255,255,255,0.9); font-size: 1.2rem;">Partagez votre inspiration avec la communauté</p>
-            </div>
+<div class="add-container">
+    <div class="section-container">
+        <h1 class="section-title">✨ Partagez votre inspiration</h1>
 
-            <div style="background: rgba(255,255,255,0.95); padding: 3rem; border-radius: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.1); max-width: 600px; margin: 0 auto;">
-                <form method="post">
-                    <div class="form-group">
-                        <label for="quote" style="display: flex; align-items: center; font-size: 1.2rem; margin-bottom: 1rem;">
-                            <span style="margin-right: 0.5rem; font-size: 1.5rem;">💬</span>
-                            Votre citation inspirante
-                        </label>
-                        <textarea
-                            name="quote"
-                            id="quote"
-                            rows="5"
-                            placeholder="Partagez une pensée, une citation ou une phrase qui vous inspire..."
-                            required
-                            style="width: 100%; padding: 1rem; border: 2px solid #e2e8f0; border-radius: 12px; font-size: 1.1rem; font-family: inherit; resize: vertical; transition: all 0.3s ease;"
-                        ></textarea>
-                        <small style="color: #6c757d; font-size: 0.9rem; display: block; margin-top: 0.5rem;">
-                            ✨ Votre citation peut inspirer et motiver d'autres personnes. Chaque mot compte !
-                        </small>
-                    </div>
+        <div class="add-form fade-in">
+            <h2 class="form-title">💬 Ajouter une citation</h2>
 
-                    <div style="text-align: center; margin-top: 2rem;">
-                        <button type="submit" class="btn btn-primary btn-lg" style="margin-right: 1rem;">
-                            ✨ Publier la citation
-                        </button>
-                        <a href="{{ path('app_home') }}" class="btn btn-outline">
-                            ❌ Annuler
-                        </a>
-                    </div>
-                </form>
+            <form method="post">
+                <div class="form-group">
+                    <label for="quote">Votre citation inspirante</label>
+                    <textarea
+                        name="quote"
+                        id="quote"
+                        rows="5"
+                        placeholder="Partagez une pensée, une citation ou une phrase qui vous inspire..."
+                        required
+                    ></textarea>
+                    <small style="color: #6c757d; font-size: 0.9rem; display: block; margin-top: 0.5rem;">
+                        ✨ Votre citation peut inspirer et motiver d'autres personnes. Chaque mot compte !
+                    </small>
+                </div>
 
-                <div style="margin-top: 3rem; padding-top: 2rem; border-top: 2px solid #e9ecef; text-align: center;">
-                    <h3 style="color: #4a5568; margin-bottom: 1rem;">🎆 Conseils pour une bonne citation</h3>
-                    <div style="display: grid; gap: 1rem; text-align: left;">
-                        <div style="display: flex; align-items: start;">
-                            <span style="margin-right: 0.5rem; color: #667eea;">•</span>
-                            <span>Choisissez des mots qui résonnent avec vos expériences</span>
-                        </div>
-                        <div style="display: flex; align-items: start;">
-                            <span style="margin-right: 0.5rem; color: #667eea;">•</span>
-                            <span>Préférez la simplicité et la clarté</span>
-                        </div>
-                        <div style="display: flex; align-items: start;">
-                            <span style="margin-right: 0.5rem; color: #667eea;">•</span>
-                            <span>Pensez à l'impact positif sur les autres</span>
-                        </div>
-                    </div>
+                <div style="text-align: center; margin-top: 2rem;">
+                    <button type="submit" class="btn btn-primary btn-lg">
+                        ✨ Publier la citation
+                    </button>
+                    <a href="{{ path('app_home') }}" class="btn btn-outline btn-lg">
+                        🏠 Retour à l'accueil
+                    </a>
+                </div>
+            </form>
+
+            <div class="feature-card" style="margin-top: 3rem;">
+                <div class="feature-icon">💡</div>
+                <h3 class="feature-title">Conseils pour une citation inspirante</h3>
+                <div class="feature-description">
+                    <p>• Choisissez des mots qui résonnent avec vos expériences</p>
+                    <p>• Privilégiez la simplicité et la clarté</p>
+                    <p>• Transmettez un message positif et motivant</p>
+                    <p>• Laissez votre authenticité transparaître</p>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
 </div>
-
-<style>
-textarea:focus {
-    outline: none !important;
-    border-color: #667eea !important;
-    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1) !important;
-}
-</style>
 {% endblock %}

@@ -7,7 +7,7 @@
 # To list all registered routes, run the following command:
 #   bin/console debug:router
 
-# Routes explicites pour le QuoteController
+# Routes définies manuellement car l'auto-import ne fonctionne pas
 app_home:
     path: /
     controller: App\Controller\QuoteController::home
@@ -23,10 +23,3 @@ app_about:
 app_add_quote:
     path: /add
     controller: App\Controller\QuoteController::add
-
-# Chargement des contrôleurs avec des attributs
-controllers:
-    resource:
-        path: ../src/Controller/
-        namespace: App\Controller
-    type: attribute

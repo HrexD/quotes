@@ -41,7 +41,7 @@ class QuoteController extends AbstractController
         ]);
     }
 
-    #[Route('/about', name: 'app_about')]
+    #[Route('/about', name: 'app_quote_about')]
     public function about(): Response
     {
         return $this->render('quote/about.html.twig');
